@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var str =
+        "Học lập trình tại F8 Học lập trình tại F8 Học lập trình tại F8 Học lập trình tại F8 Học lập trình tại F8";
+      var newColor = "red";
+      var defaultColor = "black";
+      var arrayOfWords = str.split(" ");
+      for (var i = 0; i < arrayOfWords.length; i++) {
+        var span = document.createElement("span");
+        span.textContent = arrayOfWords[i] + " ";
+        document.body.append(span);
+      }
+      var listOfCharacter = document.querySelectorAll("span");
+      var init = 0;
+      setInterval(() => {
+        if (init >= listOfCharacter.length) init = 0;
+        for (var i = 0; i < listOfCharacter.length; i++) {
+          listOfCharacter[i].style.color = defaultColor;
+        }
+        listOfCharacter[init].style.color = newColor;
+        init++;
+      }, 500);
+    </script>
+  </body>
+</html>
