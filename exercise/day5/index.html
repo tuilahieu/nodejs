@@ -7,25 +7,32 @@
   </head>
   <body>
     <script>
+      // khởi tạo các giá trị ban đầu
       var str =
         "Học lập trình tại F8 Học lập trình tại F8 Học lập trình tại F8 Học lập trình tại F8 Học lập trình tại F8";
       var newColor = "red";
       var defaultColor = "black";
+      var initialIndex = 0;
+
+      // gắn chuỗi vào dom
       var arrayOfWords = str.split(" ");
       for (var i = 0; i < arrayOfWords.length; i++) {
         var span = document.createElement("span");
         span.textContent = arrayOfWords[i] + " ";
         document.body.append(span);
       }
+
+      // xử lí đổi màu
       var listOfCharacter = document.querySelectorAll("span");
-      var init = 0;
+      var lengthCharacters = listOfCharacter.length;
+
       setInterval(() => {
-        if (init >= listOfCharacter.length) init = 0;
-        for (var i = 0; i < listOfCharacter.length; i++) {
+        if (initialIndex >= lengthCharacters) initialIndex = 0;
+        for (var i = 0; i < lengthCharacters; i++) {
           listOfCharacter[i].style.color = defaultColor;
         }
-        listOfCharacter[init].style.color = newColor;
-        init++;
+        listOfCharacter[initialIndex].style.color = newColor;
+        initialIndex++;
       }, 500);
     </script>
   </body>
