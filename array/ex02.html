@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      var customers = [
+        "ta hoang an",
+        "ta thi lan",
+        "nguyen van duong",
+        "nguyen van tuan",
+      ];
+
+      var newArr = customers.map((customer) => {
+        return `<h2>${customer}</h2>`;
+      });
+
+      var html = newArr.join("");
+
+      document.write(html);
+    </script>
+  </body>
+</html>

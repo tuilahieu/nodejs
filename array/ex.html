@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var services = [1, 2, 3, 4, 5, 6];
+
+      if (Array.isArray(services)) {
+        console.log("mảng");
+      } else {
+        console.log(" k phải mảng");
+      }
+
+      // duyệt mảng
+      //   for (var i = 0; i < services.length; i++) {
+      //     console.log(services[i]);
+      //   }
+      //   for (i in services) {
+      //     console.log(services[i]);
+      //   }
+      // xóa mảng
+      //   var index = 1;
+      //   var newArray = [];
+      //   for (i in services) {
+      //     if (parseInt(i) === parseInt(index)) continue;
+      //     newArray[newArray.length] = services[i];
+      //   }
+
+      var content =
+        "lorem ipsum is simply dummy text of the printing and typesetting industry";
+      var result = [];
+      for (var i = 0; i < content.length; i++) {
+        var char = content[i];
+        if (char === " ") continue;
+        if (result[char] === undefined) {
+          result[char] = 1;
+        } else {
+          result[char]++;
+        }
+      }
+      for (char in result) {
+        console.log(`Kí tự ${char} xuất hiện ${result[char]} lần`);
+      }
+    </script>
+  </body>
+</html>
