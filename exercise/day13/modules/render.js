@@ -57,9 +57,7 @@ class Render {
           }
         }
       }
-      viewContent = viewContent.match(/\{.*\}/g)
-        ? viewContent.replaceAll(/\{.*\}/g, "")
-        : viewContent;
+      viewContent = viewContent.replaceAll(/\{.*\}/g, "");
       response.end(viewContent);
     });
   };
