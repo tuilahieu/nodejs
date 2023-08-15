@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "username": "Hiểu Trần",
+    "email": "admin@gmail.com",
+    "password": "123456"
+  },
+  {
+    "id": 2,
+    "username": "Hoàng An",
+    "email": "admin2@gmail.com",
+    "password": "123456"
+  }
+]

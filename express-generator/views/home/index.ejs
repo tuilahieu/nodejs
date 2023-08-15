@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <title>title s</title>
+  </head>
+  <body>
+    <% const pageTitle = title + ' hello' %><%- include('../parts/header',
+    {pageTitle}) %>
+    <main>
+      <h1><%= title %></h1>
+      <h2>danh sách sản phẩm</h2>
+      <% if(products.length) %> <% { products.forEach((product) => { %>
+      <h3><%= product %></h3>
+      <% }) } %>
+    </main>
+    <%- include('../parts/footer') %>
+  </body>
+</html>

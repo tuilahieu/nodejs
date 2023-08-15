@@ -1,0 +1,26 @@
+{
+  "empty": {
+    "msg": "Vui lòng nhập đầy đủ thông tin.",
+    "type": "danger"
+  },
+  "incorrect": {
+    "msg": "Tài khoản hoặc mật khẩu bị sai.",
+    "type": "danger"
+  },
+  "correct": {
+    "msg": "Tài khoản hoặc mật khẩu bị sai.",
+    "type": "danger"
+  },
+  "no_permission": {
+    "msg": "Bạn cần đăng nhập để thực hiện tác vụ này.",
+    "type": "warning"
+  },
+  "logout": {
+    "msg": "Đăng xuất thành công.",
+    "type": "success"
+  },
+  "block_ip": {
+    "msg": "Bạn đã đăng nhập quá nhiều lần. Vui lòng thử lại sau 10 phút",
+    "type": "danger"
+  }
+}
