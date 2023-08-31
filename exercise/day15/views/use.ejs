@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Use</title>
+  </head>
+  <body>
+    <h1>Todolist</h1>
+    <form action="" method="post">
+      <input autofocus type="text" name="todo" placeholder="add todo..." />
+      <button type="submit">gửi</button>
+      <ul>
+        <% for (let i =0; i< todoList.length; i++) {%>
+        <li id="<%=todoList[i].id%>">
+          <p><%= todoList[i].content %></p>
+        </li>
+        <%}%>
+      </ul>
+    </form>
+    <script src="./javascripts/app.js"></script>
+  </body>
+</html>

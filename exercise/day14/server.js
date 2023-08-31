@@ -1,11 +1,12 @@
 const http = require("http");
 const fs = require("fs");
-const { hostname, port } = require("./model/config");
-const caller = require("./model/focus");
+var bodyParser = require("body-parser");
+
+const port = 3000;
+const hostname = "localhost";
 const render = require("./core/Base");
 
 const server = http.createServer((req, res) => {
-  caller.get();
   res.statusCode = 200;
   console.log("url", req.url);
   if (req.url === "/api") {
@@ -16,9 +17,22 @@ const server = http.createServer((req, res) => {
   } else {
     res.setHeader("Content-Type", "text/html; charset=utf-8");
     if (req.url === "/") {
-      render.render(req, res, "otpHome");
-    } else if (req.url === "/account/123") {
-      render.render(req, res, "otpCheck");
+      if (req.method === "POST") {
+        bodyParser.urlencoded({ extended: false })(req, res, () => {
+          const formData = req.body;
+          if (formData.phone.length === 10) {
+            render.render(req, res, "otpCheck", {
+              phoneFocusing: formData.phone,
+            });
+          } else {
+            render.render(req, res, "otpHome", {
+              error: "số điện thoại không đúng !",
+            });
+          }
+        });
+      } else {
+        render.render(req, res, "otpHome");
+      }
     }
   }
 });
